@@ -1,4 +1,4 @@
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import "./App.css";
 
 const loadouts = [
@@ -66,6 +66,21 @@ export default function App() {
   const [category, setCategory] = useState("All");
   const [mode, setMode] = useState("All");
   const [copiedCode, setCopiedCode] = useState("");
+  const [zoomImage, setZoomImage] = useState(null);
+
+useEffect(() => {
+  const handleEsc = (event) => {
+    if (event.key === "Escape") {
+      setZoomImage(null);
+    }
+  };
+
+  window.addEventListener("keydown", handleEsc);
+
+  return () => {
+    window.removeEventListener("keydown", handleEsc);
+  };
+}, []);
 
   const filteredLoadouts = useMemo(() => {
     return loadouts.filter((item) => {
@@ -141,9 +156,13 @@ export default function App() {
       <section className="grid">
         {filteredLoadouts.map((item) => (
           <article className="card" key={item.weapon + item.code}>
-            <div className="image-wrap">
-              <img className="loadout-image" src={item.image} alt={`Screenshot loadout ${item.weapon}`} />
-            </div>
+            <button
+  className="image-wrap"
+  	onClick={() => setZoomImage(item)}
+  aria-label={`Zoom screenshot ${item.weapon}`}
+>
+  <img className="loadout-image" src={item.image} alt={`Screenshot loadout ${item.weapon}`} />
+</button>
 
             <div className="card-top">
               <div>
@@ -173,12 +192,38 @@ export default function App() {
         ))}
       </section>
 
-      {filteredLoadouts.length === 0 && (
+       {filteredLoadouts.length === 0 && (
         <section className="empty">
           <h2>Loadout nggak ketemu</h2>
           <p>Coba ganti keyword, kategori, atau mode.</p>
         </section>
       )}
+
+      <footer className="footer">
+  <p>
+    © 2026 Garena Delta Force Loadout Database. Made by <strong>GinkGo</strong>.
+  </p>
+</footer>
+{zoomImage && (
+  <div className="zoom-overlay" onClick={() => setZoomImage(null)}>
+    <div className="zoom-modal" onClick={(event) => event.stopPropagation()}>
+      <button className="zoom-close" onClick={() => setZoomImage(null)}>
+        ×
+      </button>
+
+      <img
+        className="zoom-image"
+        src={zoomImage.image}
+        alt={`Screenshot loadout ${zoomImage.weapon}`}
+      />
+
+      <div className="zoom-info">
+        <h2>{zoomImage.weapon}</h2>
+        <p>{zoomImage.category} • {zoomImage.mode}</p>
+      </div>
+    </div>
+  </div>
+)}
     </main>
   );
 }
