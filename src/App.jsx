@@ -201,7 +201,7 @@ useEffect(() => {
 
       <footer className="footer">
   <p>
-    © 2026 Garena Delta Force Loadout Database. Made by <strong>GinkGo</strong>.
+    © 2026 Garena Delta Force Loadout Database | Made by <strong>GinkGo</strong>.
   </p>
 </footer>
 {zoomImage && (
