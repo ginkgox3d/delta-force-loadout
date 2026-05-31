@@ -152,6 +152,9 @@ const translations = {
     showing: "Menampilkan",
     from: "dari",
     loadout: "loadout",
+    statLoadouts: "Loadout",
+    statCategories: "Kategori",
+    statModes: "Mode",
     copyCode: "Copy Code",
     copied: "Copied!",
     prev: "Prev",
@@ -175,6 +178,9 @@ const translations = {
     showing: "Showing",
     from: "of",
     loadout: "loadouts",
+    statLoadouts: "Loadouts",
+    statCategories: "Categories",
+    statModes: "Modes",
     copyCode: "Copy Code",
     copied: "Copied!",
     prev: "Prev",
@@ -328,21 +334,21 @@ const paginatedLoadouts = filteredLoadouts.slice(startIndex, endIndex);
 </div>
 
           <div className="hero-stats">
-            <div className="stat-card">
-              <strong>{totalLoadouts}+</strong>
-              <span>Loadouts</span>
-            </div>
+  <div className="stat-card">
+    <strong>{totalLoadouts}+</strong>
+    <span>{t.statLoadouts}</span>
+  </div>
 
-            <div className="stat-card">
-              <strong>{totalCategories}</strong>
-              <span>Categories</span>
-            </div>
+  <div className="stat-card">
+    <strong>{totalCategories}</strong>
+    <span>{t.statCategories}</span>
+  </div>
 
-            <div className="stat-card">
-              <strong>{totalModes}</strong>
-              <span>Modes</span>
-            </div>
-          </div>
+  <div className="stat-card">
+    <strong>{totalModes}</strong>
+    <span>{t.statModes}</span>
+  </div>
+</div>
 
           <div className="hero-search-panel">
             <div className="search-box">
