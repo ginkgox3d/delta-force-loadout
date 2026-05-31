@@ -131,6 +131,26 @@ const loadouts = [
   tags: ["Close Combat", "Low Recoil"],
   notesId: "Recoil stabil, cocok buat ngerush main jarak dekat.",
   notesEn: "Stable recoil, great for rushing in close combat."
+},
+{
+  weapon: "K437",
+  category: "Assault Rifle",
+  mode: "Warfare",
+  code: "K437 Assault Rifle-Warfare-6K70V5C03J3VC9GA2O2BG",
+  image: "/screenshots/k437.png",
+  tags: ["Stable Build", "Low Recoil"],
+  notesId: "Recoil stabil, cocok buat main jarak dekat ataupun menengah.",
+  notesEn: "Stable recoil, suitable for close or medium range gameplay."
+},
+{
+  weapon: "SG552",
+  category: "Assault Rifle",
+  mode: "Warfare",
+  code: "SG552 Assault Rifle-Warfare-6K71AU003J3VC9GA2O2BG",
+  image: "/screenshots/sg552.png",
+  tags: ["Stable Build", "Low Recoil"],
+  notesId: "Recoil stabil, cocok buat main jarak menengah.",
+  notesEn: "Stable recoil, suitable for medium range gameplay."
 }
 ];
 
