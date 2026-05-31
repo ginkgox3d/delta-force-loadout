@@ -478,7 +478,16 @@ const paginatedLoadouts = filteredLoadouts.slice(startIndex, endIndex);
 
       <footer className="footer" id="footer">
   <p>
-    © 2026 {t.footer} <strong>GinkGo</strong>.
+    © 2026 {t.footer}{" "}
+    <a
+      className="footer-link"
+      href="https://www.tiktok.com/@hexaxoxo"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      GinkGo
+    </a>
+    .
   </p>
 </footer>
 {zoomImage && (
