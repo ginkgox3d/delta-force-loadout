@@ -55,6 +55,69 @@ const loadouts = [
     image: "/screenshots/smg45.png",
     tags: ["Mid Range", "Low Recoil"],
     notes: "Recoil Stabil, cocok buat main santai jarak menengah."
+  },
+  {
+    weapon: "PTR-32",
+    category: "Assault Rifle",
+    mode: "Warfare",
+    code: "PTR-32 Assault Rifle-Warfare-6K6S9HK03J3VC9GA2O2BG",
+    image: "/screenshots/ptr32.png",
+    tags: ["Mid Range", "Low Recoil"],
+    notes: "Bagus buat main jarak menengah."
+  },
+  {
+    weapon: "QBZ95-1",
+    category: "Assault Rifle",
+    mode: "Warfare",
+    code: "QBZ95-1 Assault Rifle-Warfare-6K6SA8003J3VC9GA2O2BG",
+    image: "/screenshots/qbz.png",
+    tags: ["Mid Range", "Low Recoil"],
+    notes: "Bagus buat pick musuh jarak menengah."
+  },
+  {
+    weapon: "MK4",
+    category: "SMG",
+    mode: "Warfare",
+    code: "MK4 Submachine Gun-Warfare-6K6SBB403J3VC9GA2O2BG",
+    image: "/screenshots/mk4.png",
+    tags: ["Mid Range", "Burst Mode", "Low Recoil"],
+    notes: "Low Recoil, Burst mode jarak menengah."
+  },
+  {
+    weapon: "SCAR-H",
+    category: "Battle Rifle",
+    mode: "Warfare",
+    code: "SCAR-H Battle Rifle-Warfare-6K6SAPS03J3VC9GA2O2BG",
+    image: "/screenshots/scarh.png",
+    tags: ["Mid Range", "Low Recoil"],
+    notes: "Handling agak kurang, tapi cocok buat main jarak menengah."
+  },
+  {
+    weapon: "K416",
+    category: "Assault Rifle",
+    mode: "Warfare",
+    code: "K416 Assault Rifle-Warfare-6JVJ01G03J3VC9GA2O2BGG",
+    image: "/screenshots/k416.png",
+    tags: ["Mid Range", "Low Recoil"],
+    notes: "Recoil stabil, cocok buat main jarak menengah."
+  },
+  {
+    weapon: "MP7",
+    category: "SMG",
+    mode: "Warfare",
+    code: "MP7 Submachine Gun-Warfare-6K6SDHG03J3VC9GA2O2BG",
+    image: "/screenshots/mp7.png",
+    tags: ["Close Combat", "Low Recoil"],
+    notes: "Low Recoil, cocok buat ngerush main jarak dekat."
+  },
+  {
+    weapon: "Bizon",
+    category: "SMG",
+    mode: "Warfare",
+    code: "Bizon Submachine Gun-Warfare-6K6SE9403J3VC9GA2O2BG",
+    image: "/screenshots/bizon.png",
+    tags: ["Close Combat", "Low Recoil"],
+    notes: "Recoil stabil, cocok buat ngerush main jarak dekat."
   }
 ];
 
@@ -67,6 +130,29 @@ export default function App() {
   const [mode, setMode] = useState("All");
   const [copiedCode, setCopiedCode] = useState("");
   const [zoomImage, setZoomImage] = useState(null);
+  const [currentPage, setCurrentPage] = useState(1);
+  const [itemsPerPage, setItemsPerPage] = useState(6);
+
+useEffect(() => {
+  const updateItemsPerPage = () => {
+    if (window.innerWidth <= 700) {
+      setItemsPerPage(3);
+    } else {
+      setItemsPerPage(6);
+    }
+  };
+
+  updateItemsPerPage();
+  window.addEventListener("resize", updateItemsPerPage);
+
+  return () => {
+    window.removeEventListener("resize", updateItemsPerPage);
+  };
+}, []);
+
+useEffect(() => {
+  setCurrentPage(1);
+}, [search, category, mode]);
 
 useEffect(() => {
   const handleEsc = (event) => {
@@ -96,6 +182,13 @@ useEffect(() => {
       return matchSearch && matchCategory && matchMode;
     });
   }, [search, category, mode]);
+
+const totalPages = Math.ceil(filteredLoadouts.length / itemsPerPage);
+
+const startIndex = (currentPage - 1) * itemsPerPage;
+const endIndex = startIndex + itemsPerPage;
+
+const paginatedLoadouts = filteredLoadouts.slice(startIndex, endIndex);
 
   const copyCode = async (code) => {
     try {
@@ -149,12 +242,13 @@ useEffect(() => {
 
       <section className="result-info">
         <p>
-          Menampilkan <strong>{filteredLoadouts.length}</strong> loadout
+          Menampilkan <strong>{paginatedLoadouts.length}</strong> dari{" "}
+<strong>{filteredLoadouts.length}</strong> loadout
         </p>
       </section>
 
       <section className="grid">
-        {filteredLoadouts.map((item) => (
+        {paginatedLoadouts.map((item) => (
           <article className="card" key={item.weapon + item.code}>
             <button
   className="image-wrap"
@@ -191,6 +285,42 @@ useEffect(() => {
           </article>
         ))}
       </section>
+
+{totalPages > 1 && (
+  <section className="pagination">
+    <button
+      className="page-button"
+      onClick={() => setCurrentPage((page) => Math.max(page - 1, 1))}
+      disabled={currentPage === 1}
+    >
+      Prev
+    </button>
+
+    <div className="page-numbers">
+      {Array.from({ length: totalPages }, (_, index) => {
+        const pageNumber = index + 1;
+
+        return (
+          <button
+            key={pageNumber}
+            className={`page-number ${currentPage === pageNumber ? "active" : ""}`}
+            onClick={() => setCurrentPage(pageNumber)}
+          >
+            {pageNumber}
+          </button>
+        );
+      })}
+    </div>
+
+    <button
+      className="page-button"
+      onClick={() => setCurrentPage((page) => Math.min(page + 1, totalPages))}
+      disabled={currentPage === totalPages}
+    >
+      Next
+    </button>
+  </section>
+)}
 
        {filteredLoadouts.length === 0 && (
         <section className="empty">
