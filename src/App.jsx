@@ -144,7 +144,7 @@ const translations = {
     eyebrow: "Delta Force Loadout Database",
     title: "GINKGO LOADOUT",
     subtitle:
-      "Temukan racikan senjata terbaik, kode loadout siap pakai, dan screenshot attachment buat push rank di Warfare maupun Operations.",
+      "Temukan racikan senjata terbaik, kode loadout siap pakai buat push rank di Warfare maupun Operations.",
     exploreLoadouts: "Eksplor Loadouts",
     searchPlaceholder: "Cari senjata, mode, kategori, atau tag...",
     allCategories: "Semua Kategori",
@@ -167,7 +167,7 @@ const translations = {
     eyebrow: "Delta Force Loadout Database",
     title: "GINKGO LOADOUT",
     subtitle:
-      "Discover the best weapon builds, ready-to-use loadout codes, and attachment screenshots for pushing rank in Warfare and Operations.",
+      "Discover the best weapon builds, ready-to-use loadout codes for pushing rank in Warfare and Operations.",
     exploreLoadouts: "Explore Loadouts",
     searchPlaceholder: "Search weapon, mode, category, or tag...",
     allCategories: "All Categories",
