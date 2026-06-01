@@ -151,6 +151,106 @@ const loadouts = [
   tags: ["Stable Build", "Low Recoil"],
   notesId: "Recoil stabil, cocok buat main jarak menengah.",
   notesEn: "Stable recoil, suitable for medium range gameplay."
+},
+{
+  weapon: "M7",
+  category: "Battle Rifle",
+  mode: "Warfare",
+  code: "M7 Battle Rifle-Warfare-6K7BKFS03J3VC9GA2O2BG",
+  image: "/screenshots/m7.png",
+  tags: ["Low Recoil", "High Mobility"],
+  notesId: "Recoil stabil, mobilitas tinggi. cocok buat main agak barbar.",
+  notesEn: "Stable recoil, high mobility. Suitable for playing a bit aggressively."
+},
+{
+  weapon: "AUG",
+  category: "Assault Rifle",
+  mode: "Warfare",
+  code: "AUG Assault Rifle-Warfare-6K7BL5K03J3VC9GA2O2BG",
+  image: "/screenshots/aug2.png",
+  tags: ["Low Recoil", "Long-Range Combat"],
+  notesId: "Recoil stabil, buat main jarak dekat atau pun menegah.",
+  notesEn: "Stable recoil, suitable for close or medium range gameplay."
+},
+{
+  weapon: "KC-17",
+  category: "Assault Rifle",
+  mode: "Warfare",
+  code: "KC-17 Assault Rifle-Warfare-6K7BM3S03J3VC9GA2O2BG",
+  image: "/screenshots/kc17.png",
+  tags: ["Low Recoil", "High Mobility","Close Range"],
+  notesId: "Recoil stabil, mobilitas tinggi. cocok buat main close combat agak barbar.",
+  notesEn: "Stable recoil, high mobility, suitable for close combat and somewhat aggressive gameplay."
+},
+{
+  weapon: "AS val",
+  category: "Assault Rifle",
+  mode: "Warfare",
+  code: "AS Val Assault Rifle-Warfare-6K7BMNC03J3VC9GA2O2BG",
+  image: "/screenshots/asval.png",
+  tags: ["Low Recoil", "Close Range", "Fast TTK"],
+  notesId: "Recoil stabil, mobilitas tinggi. cocok buat main close range agak barbar.",
+  notesEn: "Stable recoil, suitable for close range and slightly aggressive play."
+},
+{
+  weapon: "AKM",
+  category: "Assault Rifle",
+  mode: "Operations",
+  code: "AKM Assault Rifle-Operations-6K7BOF403J3VC9GA2O2BG",
+  image: "/screenshots/akm-op.png",
+  tags: ["Stable Recoil", "High Control"],
+  notesId: "Recoil stabil , AKM budget 250K cocok buat main di mode easy",
+  notesEn: "Stable recoil, AKM budget 250K is suitable for playing in easy mode"
+},
+{
+  weapon: "CI-19",
+  category: "Assault Rifle",
+  mode: "Operations",
+  code: "CI-19 Assault Rifle-Operations-6K7BPV003J3VC9GA2O2BG",
+  image: "/screenshots/ci19-op.png",
+  tags: ["Stable Recoil", "High Control"],
+  notesId: "Recoil stabil , CI19 budget 260K cocok buat main di mode easy",
+  notesEn: "Stable recoil, CI19 budget 260K is suitable for playing in easy mode"
+},
+{
+  weapon: "M4A1",
+  category: "Assault Rifle",
+  mode: "Operations",
+  code: "M4A1 Assault Rifle-Operations-6K7BR2S03J3VC9GA2O2BG",
+  image: "/screenshots/m4-op.png",
+  tags: ["Stable Build", "Low Recoil"],
+  notesId: "Recoil stabil , M4 budget 200K cocok buat main di mode easy",
+  notesEn: "Stable recoil, M4 budget 200K is suitable for playing in easy mode"
+},
+{
+  weapon: "AUG",
+  category: "Assault Rifle",
+  mode: "Operations",
+  code: "AUG Assault Rifle-Operations-6K7BS3003J3VC9GA2O2BG",
+  image: "/screenshots/aug-op.png",
+  tags: ["Stable Build", "Low Recoil", "High Control"],
+  notesId: "Recoil stabil , M4 budget 250K cocok buat main di mode easy",
+  notesEn: "Stable recoil, M4 budget 250K is suitable for playing in easy mode"
+},
+{
+  weapon: "K416",
+  category: "Assault Rifle",
+  mode: "Operations",
+  code: "K416 Assault Rifle-Operations-6K7BSTK03J3VC9GA2O2BG",
+  image: "/screenshots/k416-op.png",
+  tags: ["Low Recoil", "Close Range"],
+  notesId: "Recoil stabil , K416 budget 240K cocok buat main di mode easy",
+  notesEn: "Stable recoil, K416 budget 240K is suitable for playing in easy mode"
+},
+{
+  weapon: "G3",
+  category: "Battle Rifle",
+  mode: "Operations",
+  code: "G3 Battle Rifle-Operations-6K7C02003J3VC9GA2O2BG",
+  image: "/screenshots/g3-op.png",
+  tags: ["Low Recoil", "Mid Range"],
+  notesId: "Recoil stabil , G3 budget 200K cocok buat main di mode easy",
+  notesEn: "Stable recoil, G3 budget 200K is suitable for playing in easy mode"
 }
 ];
 
