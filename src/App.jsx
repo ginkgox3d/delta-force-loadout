@@ -254,17 +254,27 @@ const loadouts = [
 }
 ];
 
-const categories = ["All", "Assault Rifle", "SMG", "Sniper", "LMG", "Shotgun", "Battle Rifle"];
-const modes = ["All", "Warfare", "Operations"];
+const categories = ["All", ...new Set(loadouts.map((item) => item.category))];
+const modes = ["All", ...new Set(loadouts.map((item) => item.mode))];
 
 const translations = {
   id: {
     liveDatabase: "Database Loadout Aktif",
     gameName: "Garena Delta Force",
     eyebrow: "Delta Force Loadout Database",
-    title: "GINKGO LOADOUT",
+    title: "GINKGO GUNSMITH",
     subtitle:
-      "Temukan racikan senjata terbaik, kode loadout siap pakai buat push rank di Warfare maupun Operations.",
+      "Database loadout Delta Force yang rapi, mudah difilter, dan siap copy untuk Warfare maupun Operations.",
+    armoryBrowser: "Tactical Armory",
+    refinedBuilds: "Loadout siap tempur, rapi, cepat, dan tinggal copy.",
+    armoryIntro: "Filter build berdasarkan mode, kategori, atau gaya main. Semua kode dibuat gampang di-scan sebelum masuk match.",
+    catalogReady: "Copy-ready",
+    filteredView: "Live filter",
+    searchLabel: "Cari Loadout",
+    categoryLabel: "Kategori",
+    modeLabel: "Mode",
+    readyToCopy: "Siap Copy",
+    inspectBuild: "Preview Build",
     exploreLoadouts: "Eksplor Loadouts",
     searchPlaceholder: "Cari senjata, mode, kategori, atau tag...",
     allCategories: "Semua Kategori",
@@ -288,9 +298,19 @@ const translations = {
     liveDatabase: "Live Loadout Database",
     gameName: "Garena Delta Force",
     eyebrow: "Delta Force Loadout Database",
-    title: "GINKGO LOADOUT",
+    title: "GINKGO GUNSMITH",
     subtitle:
-      "Discover the best weapon builds, ready-to-use loadout codes for pushing rank in Warfare and Operations.",
+      "A curated Delta Force loadout database built for stable control, consistent performance, and copy-ready builds for Warfare and Operations.",
+    armoryBrowser: "Tactical Armory",
+    refinedBuilds: "Battle-ready loadouts, cleaned up, fast, and copy-ready.",
+    armoryIntro: "Filter builds by mode, category, or playstyle. Every code is easy to scan before jumping into a match.",
+    catalogReady: "Copy-ready",
+    filteredView: "Live filter",
+    searchLabel: "Search Loadout",
+    categoryLabel: "Category",
+    modeLabel: "Mode",
+    readyToCopy: "Ready to Copy",
+    inspectBuild: "Preview Build",
     exploreLoadouts: "Explore Loadouts",
     searchPlaceholder: "Search weapon, mode, category, or tag...",
     allCategories: "All Categories",
@@ -402,9 +422,6 @@ const paginatedLoadouts = filteredLoadouts.slice(startIndex, endIndex);
     }
   };
 
-  const totalLoadouts = loadouts.length;
-  const totalCategories = [...new Set(loadouts.map((item) => item.category))].length;
-  const totalModes = [...new Set(loadouts.map((item) => item.mode))].length;
 
   return (
     <main className="page">
@@ -447,75 +464,62 @@ const paginatedLoadouts = filteredLoadouts.slice(startIndex, endIndex);
   {t.subtitle}
 </p>
 
-          <div className="hero-actions">
-  <a href="#loadout-list" className="hero-button primary">
-    {t.exploreLoadouts}
-  </a>
-</div>
-
-          <div className="hero-stats">
-  <div className="stat-card">
-    <strong>{totalLoadouts}+</strong>
-    <span>{t.statLoadouts}</span>
-  </div>
-
-  <div className="stat-card">
-    <strong>{totalCategories}</strong>
-    <span>{t.statCategories}</span>
-  </div>
-
-  <div className="stat-card">
-    <strong>{totalModes}</strong>
-    <span>{t.statModes}</span>
-  </div>
-</div>
 
           <div className="hero-search-panel">
-            <div className="search-box">
+            <label className="field field-search">
+              <span>{t.searchLabel}</span>
               <input
                 type="text"
                 placeholder={t.searchPlaceholder}
                 value={search}
                 onChange={(event) => setSearch(event.target.value)}
               />
-            </div>
+            </label>
 
             <div className="filters">
-              <select value={category} onChange={(event) => setCategory(event.target.value)}>
-                {categories.map((item) => (
-                  <option key={item} value={item}>
-                    {item === "All" ? t.allCategories : item}
-                  </option>
-                ))}
-              </select>
+              <label className="field">
+                <span>{t.categoryLabel}</span>
+                <select value={category} onChange={(event) => setCategory(event.target.value)}>
+                  {categories.map((item) => (
+                    <option key={item} value={item}>
+                      {item === "All" ? t.allCategories : item}
+                    </option>
+                  ))}
+                </select>
+              </label>
 
-              <select value={mode} onChange={(event) => setMode(event.target.value)}>
-                {modes.map((item) => (
-                  <option key={item} value={item}>
-                    {item === "All" ? t.allModes : item}
-                  </option>
-                ))}
-              </select>
+              <label className="field">
+                <span>{t.modeLabel}</span>
+                <select value={mode} onChange={(event) => setMode(event.target.value)}>
+                  {modes.map((item) => (
+                    <option key={item} value={item}>
+                      {item === "All" ? t.allModes : item}
+                    </option>
+                  ))}
+                </select>
+              </label>
             </div>
           </div>
         </div>
       </section>
 
       <section className="result-info" id="loadout-list">
-        <p>
+        <p className="result-pill">
           {t.showing} <strong>{paginatedLoadouts.length}</strong> {t.from}{" "}
-<strong>{filteredLoadouts.length}</strong> {t.loadout}
+          <strong>{filteredLoadouts.length}</strong> {t.loadout}
         </p>
       </section>
 
       <section className="grid">
         {paginatedLoadouts.map((item) => (
           <article className="card" key={item.weapon + item.code}>
+            <div className="card-accent" />
             <button
   className="image-wrap"
   	onClick={() => setZoomImage(item)}
   aria-label={`Zoom screenshot ${item.weapon}`}
 >
+  <span className="image-label">{t.inspectBuild}</span>
   <img
   className="loadout-image"
   src={item.image}
@@ -526,7 +530,7 @@ const paginatedLoadouts = filteredLoadouts.slice(startIndex, endIndex);
             <div className="card-top">
               <div>
                 <h2>{item.weapon}</h2>
-                <p>{item.category}</p>
+                <p className="card-category">{item.category}</p>
               </div>
 
               <span>{item.mode}</span>
@@ -543,10 +547,11 @@ const paginatedLoadouts = filteredLoadouts.slice(startIndex, endIndex);
 </p>
 
             <div className="code-box">
+              <span>{t.readyToCopy}</span>
               <code>{item.code}</code>
             </div>
 
-            <button onClick={() => copyCode(item.code)}>
+            <button className="copy-button" onClick={() => copyCode(item.code)}>
               {copiedCode === item.code ? t.copied : t.copyCode}
             </button>
           </article>
