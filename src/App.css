@@ -953,3 +953,192 @@ code {
     margin-bottom: 22px;
   }
 }
+
+/* FORCE CARD REDESIGN - TARUH PALING BAWAH APP.CSS */
+
+.card {
+  border-radius: 28px !important;
+  border: 1px solid rgba(56, 189, 248, 0.32) !important;
+  background:
+    linear-gradient(180deg, rgba(15, 23, 42, 0.94), rgba(3, 7, 18, 0.98)) !important;
+  box-shadow:
+    0 22px 60px rgba(0, 0, 0, 0.42),
+    inset 0 1px 0 rgba(255, 255, 255, 0.06) !important;
+}
+
+.card:hover {
+  transform: translateY(-7px) !important;
+  border-color: rgba(56, 189, 248, 0.65) !important;
+  box-shadow:
+    0 30px 80px rgba(0, 0, 0, 0.55),
+    0 0 35px rgba(56, 189, 248, 0.12) !important;
+}
+
+.image-wrap {
+  border-radius: 22px !important;
+  border: 1px solid rgba(125, 211, 252, 0.22) !important;
+  background: rgba(2, 6, 14, 0.9) !important;
+}
+
+.loadout-image {
+  height: 215px !important;
+  object-fit: cover !important;
+  transition: transform 0.25s ease, opacity 0.25s ease !important;
+}
+
+.card:hover .loadout-image {
+  transform: scale(1.045) !important;
+  opacity: 0.95 !important;
+}
+
+.card-top h2 {
+  font-size: 31px !important;
+  font-weight: 900 !important;
+  letter-spacing: -0.045em !important;
+  color: #ffffff !important;
+}
+
+.card-top > span {
+  padding: 8px 11px !important;
+  border-radius: 999px !important;
+  border: 1px solid rgba(56, 189, 248, 0.28) !important;
+  background: rgba(56, 189, 248, 0.1) !important;
+  color: #bae6fd !important;
+  font-size: 11px !important;
+  font-weight: 900 !important;
+  text-transform: uppercase !important;
+}
+
+.tags small {
+  border-radius: 999px !important;
+  border: 1px solid rgba(125, 211, 252, 0.18) !important;
+  background: rgba(125, 211, 252, 0.08) !important;
+  color: #dbeafe !important;
+}
+
+.code-box {
+  border-radius: 18px !important;
+  border: 1px solid rgba(125, 211, 252, 0.18) !important;
+  background: rgba(2, 6, 14, 0.72) !important;
+}
+
+.copy-button {
+  border-radius: 16px !important;
+  background: linear-gradient(135deg, #38bdf8, #7dd3fc) !important;
+  color: #03111f !important;
+  font-weight: 950 !important;
+  letter-spacing: 0.08em !important;
+  text-transform: uppercase !important;
+  box-shadow: 0 14px 32px rgba(56, 189, 248, 0.22) !important;
+}
+
+/* LEFT + RIGHT CARD GRADIENT EDGE */
+
+.card {
+  position: relative !important;
+  overflow: hidden !important;
+}
+
+.card-accent {
+  position: absolute !important;
+  inset: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  pointer-events: none !important;
+  background: none !important;
+  box-shadow: none !important;
+  opacity: 1 !important;
+  z-index: 2 !important;
+}
+
+.card-accent::before,
+.card-accent::after {
+  content: "" !important;
+  position: absolute !important;
+  top: 0 !important;
+  bottom: 0 !important;
+  width: 3px !important;
+  background: linear-gradient(
+    180deg,
+    transparent 0%,
+    #38bdf8 18%,
+    #22c55e 55%,
+    transparent 100%
+  ) !important;
+  box-shadow: 0 0 24px rgba(56, 189, 248, 0.45) !important;
+  opacity: 0.9 !important;
+}
+
+.card-accent::before {
+  left: 0 !important;
+}
+
+.card-accent::after {
+  right: 0 !important;
+}
+
+.copy-button {
+  width: 100% !important;
+  margin-top: 13px !important;
+  padding: 14px 16px !important;
+  border-radius: 16px !important;
+  border: 1px solid rgba(125, 211, 252, 0.26) !important;
+  background:
+    linear-gradient(135deg, rgba(56, 189, 248, 0.92), rgba(34, 197, 94, 0.88)) !important;
+  color: #02111f !important;
+  font-weight: 1000 !important;
+  letter-spacing: 0.1em !important;
+  text-transform: uppercase !important;
+  cursor: pointer !important;
+  box-shadow:
+    0 16px 36px rgba(56, 189, 248, 0.22),
+    0 0 24px rgba(34, 197, 94, 0.1) !important;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    filter 0.2s ease !important;
+}
+
+.copy-button:hover {
+  transform: translateY(-2px) !important;
+  filter: brightness(1.06) !important;
+  box-shadow:
+    0 20px 46px rgba(56, 189, 248, 0.3),
+    0 0 28px rgba(34, 197, 94, 0.16) !important;
+}
+
+.copy-button:active {
+  transform: translateY(0) !important;
+}
+
+/* FIX ALIGN COPY BUTTON DI CARD */
+
+.card {
+  display: flex !important;
+  flex-direction: column !important;
+  height: 100% !important;
+}
+
+.image-wrap,
+.card-top,
+.tags,
+.notes,
+.code-box {
+  flex-shrink: 0 !important;
+}
+
+.code-box {
+  min-height: 70px !important;
+}
+
+.code-box code {
+  display: -webkit-box !important;
+  -webkit-line-clamp: 2 !important;
+  -webkit-box-orient: vertical !important;
+  overflow: hidden !important;
+  line-height: 1.45 !important;
+}
+
+.copy-button {
+  margin-top: auto !important;
+}
