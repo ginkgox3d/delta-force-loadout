@@ -229,8 +229,8 @@ const loadouts = [
   code: "AUG Assault Rifle-Operations-6K7BS3003J3VC9GA2O2BG",
   image: "/screenshots/aug-op.png",
   tags: ["Stable Build", "Low Recoil", "High Control"],
-  notesId: "Recoil stabil , M4 budget 250K cocok buat main di mode easy",
-  notesEn: "Stable recoil, M4 budget 250K is suitable for playing in easy mode"
+  notesId: "Recoil stabil , AUG budget 250K cocok buat main di mode easy",
+  notesEn: "Stable recoil, AUG budget 250K is suitable for playing in easy mode"
 },
 {
   weapon: "K416",
