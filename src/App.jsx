@@ -251,6 +251,16 @@ const loadouts = [
   tags: ["Low Recoil", "Mid Range"],
   notesId: "Recoil stabil , G3 budget 200K cocok buat main di mode easy",
   notesEn: "Stable recoil, G3 budget 200K is suitable for playing in easy mode"
+},
+{
+  weapon: "RM277",
+  category: "Assault Rifle",
+  mode: "Warfare",
+  code: "RM277-Warfare-6KHSHRG03J3VC9GA2O2BG",
+  image: "/screenshots/rm277.png",
+  tags: ["Low Recoil", "Long Range"],
+  notesId: "Low Recoil , cocok buat tahan angle medium-long range",
+  notesEn: "Low Recoil, suitable for holding medium-long range angles"
 }
 ];
 
@@ -264,7 +274,7 @@ const translations = {
     eyebrow: "Delta Force Loadout Database",
     title: "GINKGO GUNSMITH",
     subtitle:
-      "Kumpulan loadout Delta Force yang disusun untuk memberikan kontrol stabil, performa konsisten, serta build siap pakai untuk mode Warfare dan Operations.",
+      "Buat adik-adik yang suka tanya “bang kode loadoutnya mana?”, sekarang tinggal copy paste aja. Semua build Delta Force Garena di sini sudah disusun biar stabil, enak dipakai, dan siap tempur di Warfare maupun Operations.",
     armoryBrowser: "Tactical Armory",
     refinedBuilds: "Loadout siap tempur, rapi, cepat, dan tinggal copy.",
     armoryIntro: "Filter build berdasarkan mode, kategori, atau gaya main. Semua kode dibuat gampang di-scan sebelum masuk match.",
@@ -300,7 +310,7 @@ const translations = {
     eyebrow: "Delta Force Loadout Database",
     title: "GINKGO GUNSMITH",
     subtitle:
-      "A collection of Delta Force loadouts designed to provide stable control, consistent performance, and ready-to-use builds for Warfare and Operations modes.",
+      "For younger siblings who like to ask 'bro, where's the loadout code?', now you just need to copy and paste. All Garena Delta Force builds here are arranged to be stable, easy to use, and ready for combat in both Warfare and Operations.",
     armoryBrowser: "Tactical Armory",
     refinedBuilds: "Battle-ready loadouts, cleaned up, fast, and copy-ready.",
     armoryIntro: "Filter builds by mode, category, or playstyle. Every code is easy to scan before jumping into a match.",
