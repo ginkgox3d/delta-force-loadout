@@ -1142,3 +1142,39 @@ code {
 .copy-button {
   margin-top: auto !important;
 }
+
+.support-section {
+  margin: 60px 0 40px;
+  padding: 28px;
+  border-radius: 24px;
+  border: 1px solid rgba(56, 189, 248, 0.18);
+  background:
+    radial-gradient(circle at top, rgba(56,189,248,.10), transparent 45%),
+    rgba(8,15,30,.72);
+  text-align: center;
+}
+
+.support-section h2 {
+  margin-bottom: 12px;
+  color: white;
+}
+
+.support-section p {
+  color: #94a3b8;
+  margin-bottom: 24px;
+  line-height: 1.6;
+}
+
+.donation-widget {
+  display: flex;
+  justify-content: center;
+}
+
+.donation-widget iframe {
+  width: 100%;
+  max-width: 420px;
+  height: 620px;
+  border: none;
+  border-radius: 16px;
+  overflow: hidden;
+}
